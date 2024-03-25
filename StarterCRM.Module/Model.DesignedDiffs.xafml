@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="StarterCRM">
+  <BOModel>
+    <Class Name="StarterCRM.Module.BusinessObjects.Company">
+      <AppearanceRules>
+        <AppearanceRule Id="ShippingAddressRule" Criteria="[ShipToBilling] = True" TargetItems="ShippingAddress" Visibility="Hide" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SchedulerModuleBase" Version="23.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Meeting_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="33.442622950819676">
+            <LayoutGroup Id="Meeting" Direction="Vertical" RelativeSize="30.392156862745097">
+              <LayoutItem Id="Company" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="PrimaryContact" RelativeSize="48.387096774193552" Index="1" />
+            </LayoutGroup>
+            <LayoutGroup Id="Event" RelativeSize="69.6078431372549">
+              <LayoutGroup Id="Event_col1" RelativeSize="49.93045897079277">
+                <LayoutItem Id="Subject" ViewItem="Subject" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="StartOn" ViewItem="StartOn" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="EndOn" RelativeSize="21.428571428571427" Index="2" />
+                <LayoutItem Id="AllDay" RelativeSize="28.571428571428573" Index="3" />
+              </LayoutGroup>
+              <LayoutGroup Id="Event_col2" RelativeSize="50.06954102920723">
+                <LayoutItem Id="Location" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="Label" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Status" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="RecurrencePattern" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="33.278688524590166">
+            <LayoutItem Id="Description" RelativeSize="49.75369458128079" />
+            <LayoutItem Id="RecurrenceInfoXml" RelativeSize="50.24630541871921" />
+          </LayoutGroup>
+          <LayoutGroup Id="Resources_Group" Direction="Vertical" RelativeSize="33.278688524590166">
+            <LayoutItem Id="Resources" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
